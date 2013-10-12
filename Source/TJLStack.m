@@ -76,7 +76,7 @@
         array[i] = scan.data;
         scan = scan.next;
     }
-    return [NSArray arrayWithArray:array];
+    return array;
 }
 
 - (NSUInteger)count {
