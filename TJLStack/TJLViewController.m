@@ -7,9 +7,11 @@
 //
 
 #import "TJLViewController.h"
-
-@interface TJLViewController ()
-
+#import "TJLStack.h"
+@interface TJLViewController () <UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) TJLStack *stack;
+@property (strong, nonatomic) NSArray *stackArray;
 @end
 
 @implementation TJLViewController
@@ -17,13 +19,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.tableView.dataSource = self;
+    
+	self.stack = [TJLStack new];
+    for(NSUInteger i = 0; i < 20; i ++) {
+        [self.stack push:@(i)];
+    }
+    self.stackArray = [self.stack toArray];
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.stack.count;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellID = @"CELL";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.stackArray[indexPath.row]];
+    
+    return cell;
 }
-
 @end

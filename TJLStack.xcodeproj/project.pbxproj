@@ -21,6 +21,7 @@
 		DB70B35D1809A34B00D27E10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB70B33F1809A34B00D27E10 /* UIKit.framework */; };
 		DB70B3651809A34B00D27E10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB70B3631809A34B00D27E10 /* InfoPlist.strings */; };
 		DB70B3671809A34B00D27E10 /* TJLStackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB70B3661809A34B00D27E10 /* TJLStackTests.m */; };
+		DB70B3721809A36600D27E10 /* TJLStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DB70B3711809A36600D27E10 /* TJLStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		DB70B3621809A34B00D27E10 /* TJLStackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TJLStackTests-Info.plist"; sourceTree = "<group>"; };
 		DB70B3641809A34B00D27E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB70B3661809A34B00D27E10 /* TJLStackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLStackTests.m; sourceTree = "<group>"; };
+		DB70B3701809A36600D27E10 /* TJLStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TJLStack.h; path = Source/TJLStack.h; sourceTree = "<group>"; };
+		DB70B3711809A36600D27E10 /* TJLStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TJLStack.m; path = Source/TJLStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		DB70B32F1809A34B00D27E10 = {
 			isa = PBXGroup;
 			children = (
+				DB70B3731809A36D00D27E10 /* Source */,
 				DB70B3411809A34B00D27E10 /* TJLStack */,
 				DB70B3601809A34B00D27E10 /* TJLStackTests */,
 				DB70B33A1809A34B00D27E10 /* Frameworks */,
@@ -112,11 +116,8 @@
 		DB70B3411809A34B00D27E10 /* TJLStack */ = {
 			isa = PBXGroup;
 			children = (
-				DB70B34A1809A34B00D27E10 /* TJLAppDelegate.h */,
-				DB70B34B1809A34B00D27E10 /* TJLAppDelegate.m */,
-				DB70B34D1809A34B00D27E10 /* Main.storyboard */,
-				DB70B3501809A34B00D27E10 /* TJLViewController.h */,
-				DB70B3511809A34B00D27E10 /* TJLViewController.m */,
+				DB70B3741809B54E00D27E10 /* App Delegate & Storyboard */,
+				DB70B3751809B55A00D27E10 /* RootVC */,
 				DB70B3531809A34B00D27E10 /* Images.xcassets */,
 				DB70B3421809A34B00D27E10 /* Supporting Files */,
 			);
@@ -150,6 +151,34 @@
 				DB70B3631809A34B00D27E10 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB70B3731809A36D00D27E10 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DB70B3701809A36600D27E10 /* TJLStack.h */,
+				DB70B3711809A36600D27E10 /* TJLStack.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		DB70B3741809B54E00D27E10 /* App Delegate & Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DB70B34A1809A34B00D27E10 /* TJLAppDelegate.h */,
+				DB70B34B1809A34B00D27E10 /* TJLAppDelegate.m */,
+				DB70B34D1809A34B00D27E10 /* Main.storyboard */,
+			);
+			name = "App Delegate & Storyboard";
+			sourceTree = "<group>";
+		};
+		DB70B3751809B55A00D27E10 /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				DB70B3501809A34B00D27E10 /* TJLViewController.h */,
+				DB70B3511809A34B00D27E10 /* TJLViewController.m */,
+			);
+			name = RootVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +230,7 @@
 				ORGANIZATIONNAME = "Terry Lewis";
 				TargetAttributes = {
 					DB70B3581809A34B00D27E10 = {
-						TestTargetID = DB70B3371809A34B00D27E10;
+						TestTargetID = DB70B3371809A34B00D27E10 /* TJLStack */;
 					};
 				};
 			};
@@ -251,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB70B3521809A34B00D27E10 /* TJLViewController.m in Sources */,
+				DB70B3721809A36600D27E10 /* TJLStack.m in Sources */,
 				DB70B3481809A34B00D27E10 /* main.m in Sources */,
 				DB70B34C1809A34B00D27E10 /* TJLAppDelegate.m in Sources */,
 			);
@@ -461,6 +491,7 @@
 				DB70B36C1809A34B00D27E10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB70B36D1809A34B00D27E10 /* Build configuration list for PBXNativeTarget "TJLStackTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +500,7 @@
 				DB70B36F1809A34B00D27E10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
