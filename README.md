@@ -13,10 +13,10 @@ A simple implementation of a Stack data structure using LIFO ordering.
 `- pop`<br>
 `- toArray`<br>
 
-That is most of what you need. Fast Enumeration is also supported.
+That is most of what you need. Fast Enumeration is also supported. An example project is included so you can see some possible usage.
 
 <h1>License</h1>
-If you use TJLstack and you like it, feel free to let me know, <terry@ploverproductions.com>. If you have any issue or want to make improvements, submit a pull request.<br><br>
+If you use TJLStack and you like it, feel free to let me know, <terry@ploverproductions.com>. If you have any issue or want to make improvements, submit a pull request.<br><br>
 
 The MIT License (MIT)
 Copyright (c) 2013 Terry Lewis II
