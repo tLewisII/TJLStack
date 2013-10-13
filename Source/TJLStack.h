@@ -46,6 +46,19 @@
 - (NSArray *)toArray;
 
 /**
+ * Invokes the given block for each item in the stack. does not modify the stack.
+ @param block The block that will be invoked for each item in the stack.
+ */
+- (void)enumerateUsingBlock:(void (^)(id object, BOOL *stop))block;
+/**
+ * Asynchronously invokes the given block for each item in the stack. does not modify the stack.
+ * This is not the same as using NSEnumerationConcurrent.
+ @param block The block that will be invoked for each item in the stack.
+ */
+- (void)enumerateAsynchronouslyUsingBlock:(void (^)(id object, BOOL *stop))block;
+
+
+/**
  * The number of items in the stack.
  */
 @property(readonly, nonatomic) NSUInteger count;

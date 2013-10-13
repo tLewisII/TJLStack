@@ -71,12 +71,28 @@
 
 - (NSArray *)toArray {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
-    TJLNode *scan = self.head;
-    for(NSUInteger i = 0; i < self.count; i++) {
-        array[i] = scan.data;
-        scan = scan.next;
+    for(id object in self) {
+        [array addObject:object];
     }
     return array;
+}
+
+- (void)enumerateUsingBlock:(void (^)(id object, BOOL *stop))block {
+    [self enumerate:[block copy]];
+}
+
+- (void)enumerateAsynchronouslyUsingBlock:(void (^)(id object, BOOL *stop))block {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void) {
+        [self enumerateUsingBlock:[block copy]];
+    });
+}
+
+- (void)enumerate:(void (^)(id object, BOOL *stop))block {
+    BOOL stop = NO;
+    for(id object in self) {
+        if(stop) break;
+        if(block) block(object, &stop);
+    }
 }
 
 - (NSUInteger)count {
